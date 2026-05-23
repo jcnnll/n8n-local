@@ -1,8 +1,8 @@
-# n8n Lab (Local Automation Stack)
+# n8n-local (Local Automation Stack)
 
 Local n8n automation environment with:
 
-- Docker-based n8n + Postgres
+- Docker-based n8n + Postgres DB with vector DB features enabled
 - Cloudflare Tunnel for public webhooks
 - Script-driven lifecycle management
 - Optional Makefile shortcuts
@@ -12,7 +12,7 @@ Designed for:
 - webhook testing
 - API automation workflows
 - local integration development
-- freelance automation prototyping
+- local automation prototyping and development
 
 ## Requirements
 
@@ -107,7 +107,6 @@ curl -X POST https://<cloudflare-url>/webhook/test-webhook \
 
 - `scripts/up.sh` → starts full stack + tunnel
 - `scripts/down.sh` → stops everything
-- `tests.sh` → manual webhook test helper (optional)
 
 ## Make Targets (optional)
 
@@ -119,7 +118,7 @@ make logs    # view n8n logs
 
 ## Design Notes
 
-- Postgres used for persistence
+- Postgres with vector db features enabled used for persistence
 - Bind mounts used for local data visibility
 - Cloudflare quick tunnel used for temporary public access
 - Webhook URLs are injected at runtime (no manual editing)
@@ -134,6 +133,5 @@ make logs    # view n8n logs
 ## Future Enhancements (optional)
 
 - Named Cloudflare Tunnel (stable URL)
-- CI-style webhook testing suite
 - reusable workflow templates
-- OpenAI integration workflows
+- OpenAI compatable integration workflows
