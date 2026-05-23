@@ -2,7 +2,7 @@
 .env
 
 # Persistent runtime data
-data/
+data/*/
 
 # macOS
 .DS_Store
